@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { useNavigate } from "react-router";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { ContactModal } from "./ContactModal";
 
 const slides = [
   {
-    image: "https://images.unsplash.com/photo-1759844197486-5b3612c7d534?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB0ZWNobm9sb2d5JTIwb2ZmaWNlJTIwdGVhbXxlbnwxfHx8fDE3NzAzMTM2NTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    title: "Transform Hiring with Intelligence",
-    description: "Leverage AI-powered solutions to find, assess, and onboard the perfect candidates for your enterprise needs. Scale your team with precision and confidence.",
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzb2Z0d2FyZSUyMGRldmVsb3BtZW50JTIwdGVhbXxlbnwxfHx8fDE3Mzk0MDIwMDB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    title: "Build High-Impact Software Teams",
+    description: "Build high-impact software teams with a smarter, skill-focused hiring approach tailored for modern tech environments. Streamline sourcing, technical evaluations, and developer assessments using intelligent, data-driven recruitment strategies. Accelerate your software development goals by onboarding the right talent with precision, speed, and confidence.",
   },
   {
     image: "https://images.unsplash.com/photo-1744868562210-fffb7fa882d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjbG91ZCUyMGNvbXB1dGluZyUyMGRhdGElMjBjZW50ZXJ8ZW58MXx8fHwxNzcwMzUwOTAyfDA&ixlib=rb-4.1.0&q=80&w=1080",
@@ -23,7 +23,7 @@ const slides = [
 
 export function HeroCarousel() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const navigate = useNavigate();
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -75,7 +75,7 @@ export function HeroCarousel() {
               </p>
               <button
                 className="px-8 py-4 bg-gradient-to-r from-[#F97316] to-[#EA580C] text-white rounded-lg font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-200 text-lg"
-                onClick={() => navigate("/services")}
+                onClick={() => setIsContactModalOpen(true)}
               >
                 Get Started
               </button>
@@ -98,6 +98,12 @@ export function HeroCarousel() {
           />
         ))}
       </div>
+
+      {/* Contact Modal */}
+      <ContactModal
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
+      />
     </div>
   );
 }

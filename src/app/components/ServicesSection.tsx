@@ -78,8 +78,9 @@ export function ServicesSection() {
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
-            <div
+            <Link
               key={index}
+              to={service.link}
               className="group relative bg-white rounded-2xl p-6 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 overflow-hidden"
             >
               {/* Gradient accent line on hover */}
@@ -106,7 +107,7 @@ export function ServicesSection() {
 
               {/* Learn More Link */}
               <div className="mt-4 flex items-center gap-2 text-[#2E5EAA] font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <Link to={service.link}>Learn More</Link>
+                <span>Learn More</span>
                 <svg
                   className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
                   fill="none"
@@ -121,7 +122,7 @@ export function ServicesSection() {
                   />
                 </svg>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
