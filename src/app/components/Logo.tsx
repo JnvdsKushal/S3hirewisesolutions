@@ -14,7 +14,7 @@ export function Logo({ className = "" }: { className?: string }) {
 
       {/* Brand Name */}
       <span className="text-2xl font-bold tracking-tight text-[#0A2647]">
-        S3HireWiseSolutions
+        HireWiseSolutions
       </span>
 
     </Link>
