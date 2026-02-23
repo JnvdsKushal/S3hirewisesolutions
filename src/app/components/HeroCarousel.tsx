@@ -7,19 +7,23 @@ const slides = [
   {
     image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzb2Z0d2FyZSUyMGRldmVsb3BtZW50JTIwdGVhbXxlbnwxfHx8fDE3Mzk0MDIwMDB8MA&ixlib=rb-4.1.0&q=80&w=1080",
     title: "Build High-Impact Software Teams",
-    description: "Build high-impact software teams with a smarter, skill-focused hiring approach tailored for modern tech environments. Streamline sourcing, technical evaluations, and developer assessments using intelligent, data-driven recruitment strategies. Accelerate your software development goals by onboarding the right talent with precision, speed, and confidence.",
+    description:
+  "Build high-impact software teams through a smarter, skill-focused hiring approach designed for modern tech environments and scalable growth.",
   },
   {
-    image: "https://images.unsplash.com/photo-1744868562210-fffb7fa882d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjbG91ZCUyMGNvbXB1dGluZyUyMGRhdGElMjBjZW50ZXJ8ZW58MXx8fHwxNzcwMzUwOTAyfDA&ixlib=rb-4.1.0&q=80&w=1080",
-    title: "Smart IT Staffing. Scalable Solutions.",
-    description: "From cloud migration to DevOps excellence, we deliver enterprise-grade infrastructure solutions that power your digital transformation journey.",
-  },
+  image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+  title: "Smart IT Staffing. Scalable Solutions.",
+  description:
+    "From cloud migration to DevOps excellence, we deliver enterprise-grade infrastructure solutions that power your digital transformation journey.",
+},
   {
-    image: "https://images.unsplash.com/photo-1726138406359-673f93a70e46?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaWdpdGFsJTIwdHJhbnNmb3JtYXRpb24lMjBidXNpbmVzc3xlbnwxfHx8fDE3NzAyODQwNzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    title: "Future-Ready Digital & Cloud Services",
-    description: "Embrace the future with cutting-edge digital transformation strategies, cloud-native applications, and intelligent automation powered by AI and ML.",
+    image: "https://images.unsplash.com/photo-1559526324-593bc073d938?ixlib=rb-4.0.3&w=1920&q=80&auto=format&fit=crop",
+    title: "Build High-Impact Software Teams",
+    description:
+      "Build high-impact software teams through a smarter, skill-focused hiring approach designed for modern tech environments and scalable growth.",
   },
 ];
+
 
 export function HeroCarousel() {
   const [currentSlide, setCurrentSlide] = useState(0);

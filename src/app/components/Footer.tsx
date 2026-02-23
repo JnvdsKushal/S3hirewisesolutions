@@ -23,7 +23,7 @@ export function Footer() {
             {/* Social Links */}
             <div className="flex gap-3">
               <a
-                href="#"
+                href="https://www.linkedin.com/company/s3-hirewise-solutions/"
                 className="w-10 h-10 rounded-lg bg-white/10 hover:bg-white/20 transition-colors flex items-center justify-center"
               >
                 <Linkedin className="w-5 h-5" />
@@ -121,10 +121,10 @@ export function Footer() {
                 <Mail className="w-5 h-5 text-[#4A90E2] flex-shrink-0 mt-0.5" />
                 <div>
                   <a
-                    href="mailto:contact@hirewise.com"
+                    href="Hr.info@s3hirewisesolutions.in"
                     className="text-gray-300 hover:text-white transition-colors"
                   >
-                    contact@hirewise.com
+                    Hr.info@s3hirewisesolutions.in
                   </a>
                 </div>
               </li>
@@ -132,10 +132,10 @@ export function Footer() {
                 <Phone className="w-5 h-5 text-[#4A90E2] flex-shrink-0 mt-0.5" />
                 <div>
                   <a
-                    href="tel:+1234567890"
+                    href="tel:8523034552"
                     className="text-gray-300 hover:text-white transition-colors"
                   >
-                    +1 (234) 567-890
+                    8523034552
                   </a>
                 </div>
               </li>
@@ -143,8 +143,8 @@ export function Footer() {
                 <MapPin className="w-5 h-5 text-[#4A90E2] flex-shrink-0 mt-0.5" />
                 <div>
                   <span className="text-gray-300">
-                    123 Tech Boulevard<br />
-                    San Francisco, CA 94105
+                   EWS -389 , KPHB ,Road number 3<br />
+                    near manjeera trinity, Hyderabad, Telangana,500085
                   </span>
                 </div>
               </li>
