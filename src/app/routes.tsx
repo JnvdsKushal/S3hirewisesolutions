@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter } from "react-router-dom";
 import { Root } from "./pages/Root";
 import { Home } from "./pages/Home";
 import { Services } from "./pages/Services";
@@ -15,62 +15,66 @@ import { DataAnalytics } from "./pages/services/DataAnalytics";
 import { MobileDevelopment } from "./pages/services/MobileDevelopment";
 
 export const router = createBrowserRouter([
-  {
-    path: "/",
-    Component: Root,
-    children: [
-      {
-        index: true,
-        Component: Home,
-      },
-      {
-        path: "services",
-        Component: Services,
-      },
-      {
-        path: "industries",
-        Component: Industries,
-      },
-      {
-        path: "careers",
-        Component: Careers,
-      },
-      {
-        path: "about",
-        Component: About,
-      },
-      {
-        path: "services/ai-machine-learning",
-        Component: AIMachineLearning,
-      },
-      {
-        path: "services/digital-transformation",
-        Component: DigitalTransformation,
-      },
-      {
-        path: "services/software-development",
-        Component: SoftwareDevelopment,
-      },
-      {
-        path: "services/cloud-services",
-        Component: CloudServices,
-      },
-      {
-        path: "services/cybersecurity",
-        Component: Cybersecurity,
-      },
-      {
-        path: "services/it-staffing",
-        Component: ITStaffing,
-      },
-      {
-        path: "services/data-analytics",
-        Component: DataAnalytics,
-      },
-      {
-        path: "services/mobile-development",
-        Component: MobileDevelopment,
-      },
-    ],
-  },
+{
+path: "/",
+element: <Root />,
+children: [
+{
+index: true,
+element: <Home />,
+},
+{
+path: "services",
+element: <Services />,
+},
+{
+path: "industries",
+element: <Industries />,
+},
+{
+path: "careers",
+element: <Careers />,
+},
+{
+path: "about",
+element: <About />,
+},
+{
+path: "services/ai-machine-learning",
+element: <AIMachineLearning />,
+},
+{
+path: "services/digital-transformation",
+element: <DigitalTransformation />,
+},
+{
+path: "services/software-development",
+element: <SoftwareDevelopment />,
+},
+{
+path: "services/cloud-services",
+element: <CloudServices />,
+},
+{
+path: "services/cybersecurity",
+element: <Cybersecurity />,
+},
+{
+path: "services/it-staffing",
+element: <ITStaffing />,
+},
+{
+path: "services/data-analytics",
+element: <DataAnalytics />,
+},
+{
+path: "services/mobile-development",
+element: <MobileDevelopment />,
+},
+{
+path: "*",
+element: <Home />,
+}
+],
+},
 ]);
