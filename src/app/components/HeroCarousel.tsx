@@ -42,7 +42,7 @@ export function HeroCarousel() {
   };
 
   return (
-    <div className="relative w-full h-[600px] lg:h-[700px] overflow-hidden">
+    <div className="relative w-full h-[600px] lg:h-[700px] overflow-hidden -mt-20">
       <AnimatePresence mode="wait">
         <motion.div
           key={currentSlide}

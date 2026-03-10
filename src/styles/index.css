@@ -2,6 +2,13 @@
 @import './tailwind.css';
 @import './theme.css';
 
+/* Remove default browser spacing */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
