@@ -84,26 +84,25 @@ export function Services() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-br from-[#0A2647] via-[#144272] to-[#2E5EAA] overflow-hidden">
+      <section className="relative pt-24 sm:pt-32 pb-16 sm:pb-20 bg-gradient-to-br from-[#0A2647] via-[#144272] to-[#2E5EAA] overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
-            className="absolute top-20 right-20 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl"
+            className="absolute top-10 sm:top-20 right-4 sm:right-20 w-48 sm:w-96 h-48 sm:h-96 bg-blue-400/10 rounded-full blur-3xl"
             animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
             transition={{ duration: 8, repeat: Infinity }}
           />
         </div>
-
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
               Our Services
             </h1>
-            <p className="text-xl text-blue-100 leading-relaxed">
+            <p className="text-base sm:text-xl text-blue-100 leading-relaxed px-2">
               Comprehensive IT solutions designed to accelerate your digital journey and 
               unlock new possibilities for your business
             </p>
@@ -112,9 +111,9 @@ export function Services() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <section className="py-12 sm:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-8">
             {services.map((service, index) => (
               <motion.div
                 key={index}
@@ -122,36 +121,28 @@ export function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative bg-white rounded-2xl p-8 shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden"
+                className="group relative bg-white rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden"
               >
-                {/* Gradient accent on hover */}
-                <div
-                  className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${service.gradient} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300`}
-                />
+                {/* Gradient accent */}
+                <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${service.gradient} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300`} />
 
-                <div className="flex items-start gap-6">
+                <div className="flex items-start gap-4 sm:gap-6">
                   {/* Icon */}
-                  <div
-                    className={`flex-shrink-0 w-16 h-16 rounded-xl bg-gradient-to-br ${service.gradient} flex items-center justify-center`}
-                  >
-                    <service.icon className="w-8 h-8 text-white" />
+                  <div className={`flex-shrink-0 w-12 sm:w-16 h-12 sm:h-16 rounded-xl bg-gradient-to-br ${service.gradient} flex items-center justify-center`}>
+                    <service.icon className="w-6 sm:w-8 h-6 sm:h-8 text-white" />
                   </div>
 
                   {/* Content */}
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-600 mb-4">
-                      {service.description}
-                    </p>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-lg sm:text-2xl font-bold text-gray-900 mb-1.5 sm:mb-2">{service.title}</h3>
+                    <p className="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base">{service.description}</p>
 
                     {/* Features */}
-                    <div className="space-y-2 mb-6">
+                    <div className="space-y-1.5 sm:space-y-2 mb-4 sm:mb-6">
                       {service.features.map((feature, idx) => (
                         <div key={idx} className="flex items-center gap-2">
-                          <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
-                          <span className="text-sm text-gray-700">{feature}</span>
+                          <CheckCircle className="w-3.5 sm:w-4 h-3.5 sm:h-4 text-green-500 flex-shrink-0" />
+                          <span className="text-xs sm:text-sm text-gray-700">{feature}</span>
                         </div>
                       ))}
                     </div>
@@ -159,10 +150,10 @@ export function Services() {
                     {/* Learn More Link */}
                     <Link
                       to={service.link}
-                      className="inline-flex items-center gap-2 text-[#2E5EAA] font-semibold hover:gap-3 transition-all duration-200"
+                      className="inline-flex items-center gap-1.5 sm:gap-2 text-[#2E5EAA] font-semibold hover:gap-3 transition-all duration-200 text-sm sm:text-base"
                     >
                       <span>Learn More</span>
-                      <ArrowRight className="w-5 h-5" />
+                      <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5" />
                     </Link>
                   </div>
                 </div>
@@ -173,15 +164,13 @@ export function Services() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-[#0A2647] to-[#2E5EAA]">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">
-            Ready to Get Started?
-          </h2>
-          <p className="text-xl text-blue-100 mb-8">
+      <section className="py-14 sm:py-20 bg-gradient-to-br from-[#0A2647] to-[#2E5EAA]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 sm:mb-6">Ready to Get Started?</h2>
+          <p className="text-base sm:text-xl text-blue-100 mb-6 sm:mb-8 px-2">
             Let's discuss how our services can help transform your business.
           </p>
-          <button className="px-8 py-4 bg-white text-[#0A2647] rounded-lg font-semibold hover:bg-blue-50 hover:scale-105 transition-all duration-200">
+          <button className="px-7 py-3.5 bg-white text-[#0A2647] rounded-lg font-semibold hover:bg-blue-50 hover:scale-105 active:scale-95 transition-all duration-200 text-sm sm:text-base">
             Schedule a Consultation
           </button>
         </div>

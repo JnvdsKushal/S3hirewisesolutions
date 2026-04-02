@@ -8,14 +8,14 @@ const slides = [
     image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzb2Z0d2FyZSUyMGRldmVsb3BtZW50JTIwdGVhbXxlbnwxfHx8fDE3Mzk0MDIwMDB8MA&ixlib=rb-4.1.0&q=80&w=1080",
     title: "Build High-Impact Software Teams",
     description:
-  "Build high-impact software teams through a smarter, skill-focused hiring approach designed for modern tech environments and scalable growth.",
+      "Build high-impact software teams through a smarter, skill-focused hiring approach designed for modern tech environments and scalable growth.",
   },
   {
-  image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
-  title: "Smart IT Staffing. Scalable Solutions.",
-  description:
-    "From cloud migration to DevOps excellence, we deliver enterprise-grade infrastructure solutions that power your digital transformation journey.",
-},
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+    title: "Smart IT Staffing. Scalable Solutions.",
+    description:
+      "From cloud migration to DevOps excellence, we deliver enterprise-grade infrastructure solutions that power your digital transformation journey.",
+  },
   {
     image: "https://images.unsplash.com/photo-1559526324-593bc073d938?ixlib=rb-4.0.3&w=1920&q=80&auto=format&fit=crop",
     title: "Build High-Impact Software Teams",
@@ -24,7 +24,6 @@ const slides = [
   },
 ];
 
-
 export function HeroCarousel() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
@@ -32,8 +31,7 @@ export function HeroCarousel() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000); // Auto-advance every 5 seconds
-
+    }, 5000);
     return () => clearInterval(timer);
   }, []);
 
@@ -42,7 +40,9 @@ export function HeroCarousel() {
   };
 
   return (
-    <div className="relative w-full h-[600px] lg:h-[700px] overflow-hidden -mt-20">
+    // Mobile:  -mt-16 cancels the pt-16 on <main> in Root.tsx → carousel sits flush under navbar
+    // Desktop: -mt-20 unchanged → stays flush as before
+    <div className="relative w-full h-[600px] lg:h-[700px] overflow-hidden -mt-16 lg:-mt-20">
       <AnimatePresence mode="wait">
         <motion.div
           key={currentSlide}
@@ -59,22 +59,23 @@ export function HeroCarousel() {
               alt={slides[currentSlide].title}
               className="w-full h-full object-cover"
             />
-            {/* Dark gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30" />
           </div>
 
           {/* Content */}
-          <div className="relative h-full max-w-7xl mx-auto px-6 lg:px-8 flex items-center">
+          {/* pt-16 on mobile pushes text below the h-16 navbar (cancels the -mt-16 above) */}
+          {/* pt-20 on desktop pushes text below the h-20 navbar (cancels the -mt-20 above) */}
+          <div className="relative h-full max-w-7xl mx-auto px-6 lg:px-8 flex items-center pt-16 lg:pt-20">
             <motion.div
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.6 }}
               className="max-w-3xl text-white"
             >
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+              <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
                 {slides[currentSlide].title}
               </h1>
-              <p className="text-xl lg:text-2xl mb-8 text-gray-200 leading-relaxed">
+              <p className="text-lg lg:text-2xl mb-8 text-gray-200 leading-relaxed">
                 {slides[currentSlide].description}
               </p>
               <button
@@ -103,7 +104,6 @@ export function HeroCarousel() {
         ))}
       </div>
 
-      {/* Contact Modal */}
       <ContactModal
         isOpen={isContactModalOpen}
         onClose={() => setIsContactModalOpen(false)}
